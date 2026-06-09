@@ -1,0 +1,202 @@
+.stills-section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  /* background:
+    radial-gradient(circle at 50% 0%, rgba(163, 55, 58, 0.22), transparent 28%),
+    radial-gradient(circle at 50% 58%, rgba(113, 66, 126, 0.28), transparent 36%),
+    linear-gradient(180deg, rgba(20, 9, 18, 0.9), rgba(10, 8, 17, 0.96)); */
+}
+
+.stills-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 100%, rgba(255, 121, 79, 0.14), transparent 18%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 28%);
+  pointer-events: none;
+}
+
+.stills-section-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 0 1.5rem;
+}
+
+.stills-section :deep(.section-heading) {
+  max-width: 60rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stills-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.stills-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(25rem, 30%);
+  gap: 1.25rem;
+  width: 100%;
+  overflow-x: auto;
+  padding: 1.5rem 0.5rem 1.75rem;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.stills-track::-webkit-scrollbar {
+  display: none;
+}
+
+.still-card {
+  position: relative;
+  scroll-snap-align: center;
+  transition: transform 240ms ease, z-index 240ms ease;
+}
+
+.still-card:hover {
+  z-index: 3;
+  transform: scale(1.18);
+}
+
+.still-card-frame {
+  position: relative;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.38);
+  box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.35);
+}
+
+.still-card-frame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 0.125rem;
+  border-radius: inherit;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 212, 163, 0.18),
+      rgba(139, 26, 18, 0.92),
+      rgba(255, 205, 151, 0.22),
+      rgba(157, 17, 11, 0.94)
+    );
+  background-size: 220% 220%;
+  animation: borderPulse 4s linear infinite;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.still-card-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 30%),
+    radial-gradient(circle at 50% 100%, rgba(157, 17, 11, 0.26), transparent 22%);
+  pointer-events: none;
+}
+
+.still-card-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+}
+
+.stills-arrow {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  flex-shrink: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(10, 10, 18, 0.74);
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.28);
+  cursor: pointer;
+}
+
+.stills-arrow span {
+  display: block;
+  width: 0.9rem;
+  height: 0.9rem;
+  border-top: 0.125rem solid rgba(247, 231, 212, 0.92);
+  border-right: 0.125rem solid rgba(247, 231, 212, 0.92);
+}
+
+.stills-arrow-left span {
+  transform: rotate(-135deg);
+  margin-left: 0.25rem;
+}
+
+.stills-arrow-right span {
+  transform: rotate(45deg);
+  margin-right: 0.25rem;
+}
+
+@keyframes borderPulse {
+  0% {
+    background-position: 0% 50%;
+    box-shadow: 0 0 0.75rem rgba(227, 76, 48, 0.12);
+  }
+
+  50% {
+    background-position: 100% 50%;
+    box-shadow: 0 0 1.25rem rgba(227, 76, 48, 0.28);
+  }
+
+  100% {
+    background-position: 0% 50%;
+    box-shadow: 0 0 0.75rem rgba(227, 76, 48, 0.12);
+  }
+}
+
+@media (max-width: 56.25rem) {
+  .stills-section-inner {
+    padding: 1.75rem 1rem 2.5rem;
+  }
+
+  .stills-section :deep(.section-heading) {
+    padding-top: 1.75rem;
+  }
+
+  .stills-track {
+    grid-auto-columns: minmax(16rem, 72%);
+  }
+}
+
+@media (max-width: 42.5rem) {
+  .stills-carousel {
+    gap: 0.5rem;
+  }
+
+  .stills-section-inner {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .stills-track {
+    grid-auto-columns: minmax(14rem, 82%);
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .stills-arrow {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}

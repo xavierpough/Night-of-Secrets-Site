@@ -1,0 +1,117 @@
+:root {
+  --bg: #0a0611;
+  --bg-alt: #130914;
+  --panel: rgba(39, 18, 29, 0.6);
+  --panel-strong: rgba(48, 23, 35, 0.82);
+  --line: rgba(255, 193, 145, 0.12);
+  --line-strong: rgba(255, 183, 128, 0.24);
+  --text: #f7e7d4;
+  --text-muted: rgba(247, 231, 212, 0.75);
+  --gold: #e8c99f;
+  --poster-red: #8b1a12;
+  --poster-red-deep: #7c2119;
+  --poster-red-shadow: #47100d;
+  --poster-red-glow: rgba(180, 70, 56, 0.34);
+  --poster-red-soft: rgba(180, 70, 56, 0.16);
+  --poster-red-bright: #db7c68;
+  --shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  --container: 70rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 20rem;
+  color: var(--text);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(82, 95, 164, 0.28), transparent 34%),
+    radial-gradient(circle at 50% 45%, var(--poster-red-soft), transparent 28%),
+    linear-gradient(180deg, #060711 0%, #0c0813 42%, #120815 100%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+.container {
+  width: min(calc(100% - 2rem), var(--container));
+  margin: 0 auto;
+}
+
+.section {
+  padding: 1.5rem 0 1.125rem;
+}
+
+.section-last {
+  padding-bottom: 4rem;
+}
+
+.panel {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 50%),
+    linear-gradient(180deg, var(--panel), rgba(17, 10, 20, 0.9));
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2rem;
+  padding: 0.625rem 1.5rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-family: 'Cinzel', 'Times New Roman', serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button-small {
+  min-height: 2.375rem;
+  padding: 0.5rem 1.125rem;
+}
+
+.button-primary {
+  background: linear-gradient(180deg, var(--poster-red), var(--poster-red-deep));
+  box-shadow: 0 14px 28px var(--poster-red-glow);
+}
+
+.button-secondary {
+  border-color: rgba(255, 214, 180, 0.32);
+  background: rgba(14, 12, 21, 0.6);
+}
+
+@media (max-width: 42.5rem) {
+  .container {
+    width: min(calc(100% - 1.25rem), var(--container));
+  }
+}

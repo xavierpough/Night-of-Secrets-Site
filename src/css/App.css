@@ -1,0 +1,28 @@
+.site-shell {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.site-backdrop {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 18%, rgba(153, 178, 255, 0.2), transparent 18%),
+    radial-gradient(circle at 50% 55%, rgba(180, 70, 56, 0.14), transparent 20%),
+    radial-gradient(circle at 10% 15%, rgba(68, 78, 126, 0.24), transparent 18%),
+    radial-gradient(circle at 90% 18%, rgba(68, 78, 126, 0.22), transparent 16%),
+    radial-gradient(circle at 50% 80%, rgba(180, 70, 56, 0.12), transparent 22%);
+  pointer-events: none;
+  z-index: -2;
+}
+
+.site-shell::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(3, 4, 10, 0.1), rgba(4, 2, 9, 0.72)),
+    radial-gradient(circle at center, transparent 40%, rgba(0, 0, 0, 0.5) 100%);
+  pointer-events: none;
+  z-index: -1;
+}

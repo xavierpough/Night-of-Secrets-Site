@@ -1,0 +1,109 @@
+.funding-panel {
+  padding: 1.75rem;
+  border-radius: 1.625rem;
+}
+
+.funding-summary {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1.125rem;
+  margin-bottom: 1.125rem;
+}
+
+.funding-raised {
+  margin: 0;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.funding-goal {
+  margin: 0.5rem 0 0;
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.funding-stats {
+  display: grid;
+  gap: 0.5rem;
+  justify-items: end;
+}
+
+.funding-stats strong {
+  font-size: 2.5rem;
+  color: var(--gold);
+}
+
+.funding-stats span {
+  display: inline-flex;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--poster-red), var(--poster-red-deep));
+  font-family: 'Cinzel', 'Times New Roman', serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.78rem;
+}
+
+.progress {
+  display: grid;
+  gap: 0.875rem;
+}
+
+.progress-track {
+  position: relative;
+  height: 0.875rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 214, 180, 0.12);
+}
+
+.progress-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  border-radius: inherit;
+  background:
+    radial-gradient(circle at center, rgba(255, 243, 201, 0.4), transparent 60%),
+    linear-gradient(90deg, var(--poster-red-deep), var(--poster-red-bright));
+  box-shadow: 0 0 24px rgba(180, 70, 56, 0.28);
+}
+
+.progress-scale {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+  color: rgba(247, 231, 212, 0.64);
+  font-family: 'Cinzel', 'Times New Roman', serif;
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+}
+
+.progress-scale span:last-child {
+  text-align: right;
+}
+
+@media (max-width: 42.5rem) {
+  .funding-panel {
+    padding: 1.25rem;
+  }
+
+  .funding-summary {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .funding-stats {
+    justify-items: start;
+  }
+
+  .progress-scale {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .progress-scale span,
+  .progress-scale span:last-child {
+    text-align: left;
+  }
+}

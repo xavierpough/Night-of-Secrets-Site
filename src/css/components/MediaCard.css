@@ -1,0 +1,100 @@
+.media-card {
+  overflow: hidden;
+  border-radius: 1.5rem;
+}
+
+.media-thumb {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(180deg, rgba(35, 47, 83, 0.7), rgba(14, 10, 20, 0.96));
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.media-thumb::before,
+.media-thumb::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.media-thumb::before {
+  background:
+    radial-gradient(circle at 50% 24%, rgba(186, 203, 255, 0.26), transparent 22%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 48%);
+}
+
+.media-thumb::after {
+  background: radial-gradient(circle at 50% 100%, rgba(180, 70, 56, 0.18), transparent 24%);
+}
+
+.media-teaser {
+  background:
+    linear-gradient(180deg, rgba(36, 54, 94, 0.76), rgba(17, 10, 22, 0.96)),
+    radial-gradient(circle at 50% 30%, rgba(202, 218, 255, 0.3), transparent 18%);
+}
+
+.media-bts {
+  background:
+    linear-gradient(180deg, rgba(26, 30, 48, 0.8), rgba(18, 10, 17, 0.96)),
+    radial-gradient(circle at 55% 56%, rgba(255, 166, 86, 0.34), transparent 12%);
+}
+
+.media-thumb.has-image {
+  background-image:
+    linear-gradient(180deg, rgba(7, 4, 10, 0.18), rgba(8, 4, 10, 0.58)),
+    var(--media-thumbnail);
+  background-size: cover, contain;
+}
+
+.media-creator {
+  background:
+    linear-gradient(180deg, rgba(47, 50, 78, 0.76), rgba(21, 11, 18, 0.96)),
+    radial-gradient(circle at 72% 44%, rgba(255, 166, 86, 0.32), transparent 10%);
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4.625rem;
+  height: 4.625rem;
+  margin: -2.3125rem 0 0 -2.3125rem;
+  border-radius: 50%;
+  background: rgba(247, 231, 212, 0.12);
+  border: 1px solid rgba(247, 231, 212, 0.24);
+}
+
+.play-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  margin: -0.75rem 0 0 -0.25rem;
+  border-top: 0.75rem solid transparent;
+  border-bottom: 0.75rem solid transparent;
+  border-left: 1.25rem solid rgba(255, 239, 219, 0.9);
+}
+
+.media-card h3 {
+  margin: 0;
+  padding: 1.125rem 1.25rem 0;
+  font-family: 'Cinzel', 'Times New Roman', serif;
+  color: var(--gold);
+  text-transform: uppercase;
+  font-size: 1.15rem;
+  letter-spacing: 0.04em;
+}
+
+.media-card p {
+  margin: 0;
+  padding: 0 1.25rem 1.25rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  font-size: 1rem;
+}

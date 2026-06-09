@@ -1,0 +1,102 @@
+.logline-section {
+  position: relative;
+  z-index: 1;
+  min-height: 36rem;
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  background: #08050d;
+  clip-path: polygon(0 8%, 100% 0, 100% 92%, 0 100%);
+  isolation: isolate;
+  margin: -1.5rem 0;
+}
+
+.logline-video,
+.logline-video-frame,
+.logline-overlay {
+  position: absolute;
+  inset: -8%;
+}
+
+.logline-video {
+  z-index: -3;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.logline-video-frame {
+  top: 50%;
+  left: 50%;
+  width: max(116%, 206.22vh);
+  height: max(116%, 65.25vw);
+  border: 0;
+  transform: translate(-50%, -50%);
+}
+
+.logline-overlay {
+  z-index: -2;
+  background:
+    linear-gradient(90deg, rgba(3, 2, 7, 0.9) 0%, rgba(8, 5, 12, 0.58) 45%, rgba(3, 2, 7, 0.82) 100%),
+    linear-gradient(180deg, rgba(3, 2, 7, 0.78) 0%, rgba(3, 2, 7, 0.2) 48%, rgba(3, 2, 7, 0.84) 100%),
+    radial-gradient(circle at 50% 50%, rgba(180, 70, 56, 0.16), transparent 36%);
+}
+
+.logline-content {
+  display: grid;
+  justify-items: center;
+  gap: 0.75rem;
+  padding: 6.5rem 1rem;
+  text-align: center;
+}
+
+
+.logline-copy {
+  position: relative;
+  max-width: 55rem;
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(1.45rem, 2.9vw, 2.45rem);
+  font-style: italic;
+  line-height: 1.16;
+  text-shadow: 0 0.875rem 1.75rem rgba(0, 0, 0, 0.78);
+}
+
+.logline-copy-measure {
+  visibility: hidden;
+}
+
+.logline-typewriter {
+  position: absolute;
+  inset: 0;
+}
+
+.logline-caret {
+  display: inline-block;
+  height: 0.9em;
+  margin-left: 0.08em;
+  border-right: 0.08em solid currentColor;
+  transform: translateY(0.08em);
+  animation: logline-caret-blink 780ms steps(1) infinite;
+}
+
+@keyframes logline-caret-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 42.5rem) {
+  .logline-section {
+    min-height: 32rem;
+    clip-path: polygon(0 6%, 100% 0, 100% 94%, 0 100%);
+    margin: -1rem 0;
+  }
+
+  .logline-content {
+    padding: 5rem 0;
+  }
+
+  .logline-copy {
+    line-height: 1.22;
+  }
+}

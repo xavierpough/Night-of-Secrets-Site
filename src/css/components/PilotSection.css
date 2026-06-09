@@ -1,0 +1,225 @@
+.pilot-section {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 80% 18%, rgba(180, 70, 56, 0.12), transparent 24%),
+    radial-gradient(circle at 20% 42%, rgba(232, 201, 159, 0.08), transparent 18%),
+    linear-gradient(180deg, #050507, #0b0709 48%, #050507);
+}
+
+.pilot-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(112deg, transparent 0 1.8rem, rgba(255, 255, 255, 0.025) 1.86rem 1.92rem, transparent 2rem 3.2rem),
+    radial-gradient(circle at center, transparent 48%, rgba(0, 0, 0, 0.42));
+  pointer-events: none;
+}
+
+.pilot-section-inner {
+  position: relative;
+  z-index: 1;
+  width: min(calc(100% - 2rem), 78rem);
+  margin: 0 auto;
+  padding: 2.75rem 0 3rem;
+}
+
+.pilot-header {
+  display: grid;
+  justify-items: center;
+  gap: 0.45rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.pilot-title-art {
+  display: block;
+  width: min(30rem, 84vw);
+  height: auto;
+}
+
+.pilot-header h2 {
+  margin: 0;
+  color: var(--gold);
+  font-family: 'Cinzel', 'Times New Roman', serif;
+  font-size: clamp(2.35rem, 5vw, 4.5rem);
+  line-height: 0.92;
+  text-transform: uppercase;
+}
+
+.pilot-header p {
+  margin: 0;
+  color: #d23220;
+  font-family: 'Cinzel', 'Times New Roman', serif;
+  font-size: clamp(1rem, 2vw, 1.65rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.pilot-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(24rem, 1fr);
+  gap: 2.25rem;
+  align-items: stretch;
+}
+
+.pilot-copy h3,
+.recognition-card h3,
+.pilot-pillar h4 {
+  margin: 0;
+  color: var(--gold);
+  font-family: 'Cinzel', 'Times New Roman', serif;
+  text-transform: uppercase;
+}
+
+.pilot-copy > h3 {
+  margin-bottom: 0.9rem;
+  font-size: clamp(1.45rem, 2.8vw, 2rem);
+}
+
+.pilot-copy > p {
+  margin: 0 0 1rem;
+  color: var(--text);
+  font-size: clamp(1rem, 1.6vw, 1.16rem);
+  line-height: 1.48;
+}
+
+.recognition-card {
+  margin-top: 1.15rem;
+  padding: 1.15rem;
+  border-radius: 0.75rem;
+  border-color: rgba(219, 124, 104, 0.22);
+  text-align: center;
+}
+
+.recognition-card h3 {
+  color: #d23220;
+  font-size: 1.15rem;
+  letter-spacing: 0.06em;
+}
+
+.recognition-card p {
+  max-width: 34rem;
+  margin: 0.55rem auto 1rem;
+  color: var(--text);
+  line-height: 1.45;
+  font-size: 1rem;
+}
+
+.award-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.award-card {
+  display: grid;
+  place-items: center;
+  min-height: 8rem;
+  padding: 1rem;
+  border: 1px solid rgba(255, 203, 162, 0.14);
+  border-radius: 0.55rem;
+  background: rgba(0, 0, 0, 0.28);
+}
+
+.award-card img {
+  display: block;
+  max-width: min(100%, 11rem);
+  max-height: 6.75rem;
+  object-fit: contain;
+}
+
+.pilot-pillars {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.pilot-pillar {
+  padding-inline: 1.25rem;
+  text-align: center;
+  border-right: 1px solid rgba(255, 203, 162, 0.16);
+}
+
+.pilot-pillar:last-child {
+  border-right: 0;
+}
+
+.pilot-pillar span {
+  display: block;
+  margin-bottom: 0.55rem;
+  color: #d23220;
+  font-size: 2rem;
+}
+
+.pilot-pillar h4 {
+  min-height: 2.2rem;
+  color: var(--gold);
+  font-size: 0.95rem;
+  line-height: 1.15;
+}
+
+.pilot-pillar p {
+  margin: 0.45rem 0 0;
+  color: var(--text-muted);
+  line-height: 1.4;
+  font-size: 0.95rem;
+}
+
+.pilot-cover {
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  border-color: rgba(219, 124, 104, 0.24);
+  background: rgba(0, 0, 0, 0.38);
+}
+
+.pilot-cover img {
+  display: block;
+  width: 100%;
+  max-height: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 68.75rem) {
+  .pilot-grid,
+  .pilot-pillars {
+    grid-template-columns: 1fr;
+  }
+
+  .pilot-cover {
+    max-width: 42rem;
+    margin: 0 auto;
+  }
+
+  .pilot-cover img {
+    aspect-ratio: 1 / 1;
+    height: auto;
+  }
+
+  .pilot-pillar {
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 203, 162, 0.16);
+    padding: 0 0 1rem;
+  }
+
+  .pilot-pillar:last-child {
+    border-bottom: 0;
+  }
+}
+
+@media (max-width: 42.5rem) {
+  .pilot-section-inner {
+    width: min(calc(100% - 1.25rem), 78rem);
+    padding: 2rem 0;
+  }
+
+  .award-grid {
+    grid-template-columns: 1fr;
+  }
+}
