@@ -1,12 +1,13 @@
 import behindScenesCover from '../img/NoS_Behind_Scenes_Cover.png'
+import teaserCover from '../img/Teaser_Cover.png'
 
 export const navigation = [
-  { label: 'Logline', href: '#logline' },
+  // { label: 'Logline', href: '#logline' },
+  { label: 'See the Vision', href: '#vision' },
   { label: 'About the Series', href: '#about' },
   { label: 'Pilot Script', href: '#pilot' },
-  { label: 'Funding Progress', href: '#progress' },
-  { label: 'See the Vision', href: '#vision' },
-  { label: 'Why Invest', href: '#invest' },
+  // { label: 'Funding Progress', href: '#progress' },
+  // { label: 'Why Invest', href: '#invest' },
 ]
 
 export const silhouettes = [
@@ -209,19 +210,21 @@ export const mediaCards = [
     title: 'Watch the Teaser',
     copy: 'A first taste of the world, tension, and tone.',
     variant: 'media-teaser',
+    thumbnail: teaserCover,
+    videoUrl: 'https://vimeo.com/1206188773/54f7c8d719?share=copy&fl=sv&fe=ci',
   },
   {
     title: 'Behind the Scenes',
     copy: 'Hear from the team on the creative process, production design, and project vision.',
     variant: 'media-bts',
     thumbnail: behindScenesCover,
-    videoUrl: 'https://www.youtube.com/embed/8KyCkyxd8HM?autoplay=1&rel=0',
+    videoUrl: 'https://youtu.be/OeMoRfTgJpw?si=OTcDaAIDvlE9XsvP',
   },
-  {
-    title: 'Hear from the Creator',
-    copy: 'Creative intent, project ambition, and investor-facing vision.',
-    variant: 'media-creator',
-  },
+  // {
+  //   title: 'Hear from the Creator',
+  //   copy: 'Creative intent, project ambition, and investor-facing vision.',
+  //   variant: 'media-creator',
+  // },
 ]
 
 export const socials = [

@@ -11,6 +11,7 @@
       <StillsSection />
       <AboutSection :story="story" />
       <PilotSection :pilot="pilotScript" />
+      <!--
       <FundingSection :funding="funding" />
       <FeatureSection
         section-id="invest"
@@ -36,7 +37,8 @@
         subtitle="Funding helps us reach the quality bar required for independent production, post-production, marketing, and festival positioning."
         :body="fundingNeedCopy"
       />
-      <RoadmapSection :roadmap="roadmap" />
+      -->
+      <!-- <RoadmapSection :roadmap="roadmap" /> -->
       <FooterSection :socials="socials" />
     </main>
   </div>
